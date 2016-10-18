@@ -68,6 +68,13 @@ public class ReadQuery
     {
         String table = "";
         table += "<table>";
+        table += "<tr>";
+        table += "<th>Game ID</th>";
+        table += "<th>Game Name</th>";
+        table += "<th>Release Year</th>";
+        table += "<th>Console</th>";
+        table += "<th></th>";
+        table += "</tr>";
         
         try {
             while(this.results.next()){
@@ -77,6 +84,8 @@ public class ReadQuery
                 game.setGameName(this.results.getString("gameName"));
                 game.setReleaseYear(this.results.getInt("releaseYear"));
                 game.setConsole(this.results.getString("console"));
+                
+                
                 
                 table += "<tr>";
                 

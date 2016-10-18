@@ -1,0 +1,43 @@
+body {
+    background: #D2B48C;
+}
+
+table{
+    border: 8px solid white;
+    border-collapse: collapse;
+    
+}
+
+th, td{
+    vertical-align: middle;
+    text-align: center;
+    padding: 15px;
+}
+
+tr:hover{
+    background-color: #CCCCCC;
+}
+
+tr:nth-child(even){
+    background-color: #F2F2F2
+}
+
+/*tr:nth-child(odd){
+    background-color: #EDEDED
+}*/
+
+th{
+    background-color: #FFFF99;
+    color: #696969;
+    
+}
+
+td{
+    background-color: #F08080;
+    color: white;
+    border: 3px solid white;
+}
+
+a{
+    color: #696969;
+}
