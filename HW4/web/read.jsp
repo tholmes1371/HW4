@@ -14,5 +14,10 @@
         <h1>Tom's Game Database</h1>
         
         <%= table %>
+        
+        <br>
+        
+        <a href="add">Add a new game</a>
+        
     </body>
 </html>
