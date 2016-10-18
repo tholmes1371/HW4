@@ -9,21 +9,22 @@
         <title>Add A New Game</title>
     </head>
     <body>
+        <div>
         <h1>Add a New Game</h1>
         <form name="addForm" action="addGame" method="get">
             
-            <label>Game Name:</label>
-            <input type="text" name="name" value=""/>
-            <br>
-            <label>Release Year:</label>
-            <input type="text" name="year" value=""/>
-            <br>
-            <label>Console:</label>
-            <input type="text" name="console" value=""/>
-            <br>
+            Game Name:<br>
+            <input type="text" name="name" value=""/><br>
+            
+            Release Year:<br>
+            <input type="text" name="year" value=""/><br>
+            
+            Console:<br>
+            <input type="text" name="console" value=""/><br>
+            
             <input type="submit" name="submit" value="Submit"/>
         </form>
-        
+        </div>
             
         
         
