@@ -96,6 +96,10 @@ public class ReadQuery
                 table += game.getConsole();
                 table += "</td>";
                 
+                table += "<td>";
+                table += "<a href=delete?gameID=" + game.getGameID() + "> Delete </a>";
+                table += "</td>";
+                
                 table += "</tr>";
                 
             }
