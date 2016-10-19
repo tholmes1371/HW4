@@ -5,7 +5,6 @@
  */
 package controller;
 
-import dbhelpers.AddQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,14 +13,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Games;
 
 /**
  *
  * @author tholm_000
  */
-@WebServlet(name = "AddServlet", urlPatterns = {"/addGame"})
-public class AddServlet extends HttpServlet {
+@WebServlet(name = "EditForm", urlPatterns = {"/edit"})
+public class EditForm extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +38,10 @@ public class AddServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddServlet</title>");            
+            out.println("<title>Servlet EditForm</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EditForm at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,7 +59,6 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
             doPost(request, response);
     }
 
@@ -77,34 +74,18 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+            int gameID = Integer.parseInt(request.getParameter("gameID"));
+            String gameName = request.getParameter("gameName");
+            int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
+            String console = request.getParameter("console");
+            
+            //session.setAttribute("gameID", gameID);
+            
         
-        //get the data
-        String name = request.getParameter("name");
-        int year = Integer.parseInt(request.getParameter("year"));
-        String console = request.getParameter("console");
-                
-        //set up a game object
-        Games game = new Games();
-        
-        game.setGameName(name);//populate the new object
-        game.setReleaseYear(year);
-        game.setConsole(console);
-                
-        //set up an editQuery object
-        AddQuery aq = new AddQuery();        
-        
-        //pass the game to addQuery to add to the database
-        aq.doAdd(game);
-                
-        //pass execution control to the ReadServlet
-        
-        String url = "/read";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward (request, response);
-        
-        
-        
+            String url = "/edit.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward (request, response);
     }
 
     /**

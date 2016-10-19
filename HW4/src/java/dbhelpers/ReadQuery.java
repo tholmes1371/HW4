@@ -74,6 +74,7 @@ public class ReadQuery
         table += "<th>Release Year</th>";
         table += "<th>Console</th>";
         table += "<th></th>";
+        table += "<th></th>";
         table += "</tr>";
         
         try {
@@ -107,6 +108,10 @@ public class ReadQuery
                 
                 table += "<td>";
                 table += "<a href=delete?gameID=" + game.getGameID() + "> Delete </a>";
+                table += "</td>";
+                
+                table += "<td>";
+                table += "<a href=edit?gameID=" + game.getGameID() + "&gameName=" + game.getGameName() + "&releaseYear=" + game.getReleaseYear() + "&console=" + game.getConsole() + "> Edit </a>";
                 table += "</td>";
                 
                 table += "</tr>";
