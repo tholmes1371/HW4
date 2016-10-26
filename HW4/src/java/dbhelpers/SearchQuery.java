@@ -13,25 +13,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Games;
 
-public class ReadQuery
-{
+
+public class SearchQuery {
     
-    private Connection conn;
-    private ResultSet results;
-    
-    public ReadQuery()
-        {
-          Properties props = new Properties();
+   private Connection conn;
+   private ResultSet results;
+   
+   
+    public SearchQuery(){
+        
+        Properties props = new Properties();
           InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
           
           String driver = props.getProperty("driver.name");
@@ -41,31 +42,39 @@ public class ReadQuery
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = DriverManager.getConnection(url,username,passwd);
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-                       
-                
+        
+        
+        
     }
-    public void doRead()
-    {
-        try {
-            String query = "Select * from games ORDER BY gameID ASC";
-            
-            PreparedStatement ps = conn.prepareStatement(query);
-            this.results = ps.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+    
+    
+    public void doSearch(String gameName){
+        
+       try {
+           String query = "SELECT * from games WHERE UPPER(gameName) LIKE ?";
+           
+           PreparedStatement ps = conn.prepareStatement(query);
+           ps.setString(1, "%" + gameName.toUpperCase() + "%");
+           this.results = ps.executeQuery();
+       } catch (SQLException ex) {
+           Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        
+        
+        
     }
+    
     
     public String getHTMLtable()
     {
+        
         String table = "";
         table += "<table class='table1'>";
         table += "<tr>";
@@ -78,6 +87,13 @@ public class ReadQuery
         table += "</tr>";
         
         try {
+            if (!this.results.isBeforeFirst()){
+                               
+                table += "<tr>";
+                table += "<td colspan='6'>Sorry, this game does not exist in the database</td>";
+                table += "</tr>";
+            }
+            else{
             while(this.results.next()){
                 
                 Games game = new Games();
@@ -117,15 +133,19 @@ public class ReadQuery
                 table += "</tr>";
                 
             }
+           }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         table += "</table>";
         
             return table;
     }
-
     
     
 }
+    
+    
+    
+

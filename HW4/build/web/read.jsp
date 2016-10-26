@@ -19,6 +19,10 @@
         <br>
         
         <a href="add">Add a new game</a>
+        <br><br>
+        <a href="search.jsp">Search All Games</a>
+        <br><br>
+        <a href="read">View All Games</a>
         
     </body>
 </html>

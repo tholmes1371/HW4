@@ -12,5 +12,7 @@
         <h1>Welcome to Tom's Database!</h1>
         
         <a href="read">View All Games</a>
+        <br><br>
+        <a href="search.jsp">Search All Games</a>
     </body>
 </html>
