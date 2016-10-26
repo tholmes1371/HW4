@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dbhelpers.ReadRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Games;
 
 /**
  *
@@ -75,13 +77,18 @@ public class EditForm extends HttpServlet {
             throws ServletException, IOException {
         
             int gameID = Integer.parseInt(request.getParameter("gameID"));
-            String gameName = request.getParameter("gameName");
-            int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
-            String console = request.getParameter("console");
+//            String gameName = request.getParameter("gameName");
+//            int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
+//            String console = request.getParameter("console");
             
-            //session.setAttribute("gameID", gameID);
             
-        
+            ReadRecord rr = new ReadRecord(gameID);
+            
+            rr.doRead();
+            Games game = rr.getGame();
+            
+            request.setAttribute("game", game);
+            
             String url = "/edit.jsp";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);

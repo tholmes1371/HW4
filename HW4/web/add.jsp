@@ -12,17 +12,28 @@
         
         
         <form name="addForm" action="addGame" method="get">
-            <h2>Add a New Game</h2>
-            Game Name:<br>
-            <input type="text" name="name" value=""/><br>
             
-            Release Year:<br>
-            <input type="text" name="year" value=""/><br>
+            <table class="table2">
+                <th colspan="2">Add A New Game:</th>
+                <tr>
+                    <td>Game Name:</td>
+                    <td><input type="text" name="name" value=""/></td>
+                </tr>
+                
+                <tr>
+                    <td>Release Year:</td>
+                    <td><input type="text" name="year" value=""/></td>
+                </tr>
+                
+                <tr>
+                    <td>Console:</td>
+                    <td><input type="text" name="console" value=""/></td>
+                </tr>
             
-            Console:<br>
-            <input type="text" name="console" value=""/><br><br>
-            
+            </table>
+            <br>
             <input type="submit" name="submit" value="Submit"/>
+            <input type="reset" name ="reset" value="Reset" />
         </form>
         
             

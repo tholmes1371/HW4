@@ -2,50 +2,84 @@ body {
     background: #D2B48C;
 }
 
-table{
+table.table1{
     border: 8px solid white;
     border-collapse: collapse;
     width: 100%;
     
 }
 
-th, td{
+input[readonly]{
+    background-color: #F08080;
+}
+
+table.table1 th, td{
     vertical-align: middle;
     text-align: center;
     padding: 15px;
 }
 
-td:hover{
+table.table1 td:hover{
     background-color: #CCCCCC;
 }
 
-tr:nth-child(even){
+table.table1 tr:nth-child(even){
     background-color: #F2F2F2;
 }
 
-th{
+table.table1 th{
     background-color: #FFFF99;
     color: #696969;
     height: 30px;
     
 }
 
-td{
+table.table1 td{
     background-color: #F08080;
     color: white;
     border: 3px solid white;
 }
 
+table.table2{
+    border: 8px solid white;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+table.table2 th, td{
+    vertical-align: middle;
+    text-align: center;
+    padding: 15px;
+}
+
+table.table2 tr:nth-child(even){
+    background-color: #F2F2F2;
+}
+
+table.table2 th{
+    background-color: #FFFF99;
+    color: #696969;
+    height: 30px;
+    
+}
+
+table.table2 td{
+    background-color: #F08080;
+    color: white;
+    border: 3px solid white;
+}
 a{
     color: #696969;
 }
 
+
 form{
-    background: #F08080;
+    
     margin: auto;
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     color: white;
     border: 4 px solid white;
     border-radius: 10px;

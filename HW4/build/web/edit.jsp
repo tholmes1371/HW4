@@ -1,6 +1,11 @@
 
 
+<%@page import="model.Games"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<% Games game = (Games) request.getAttribute("game"); %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,37 +14,39 @@
         <title>Edit A Game</title>
     </head>
     
-    <%
-        
-        int gameID = Integer.parseInt(request.getParameter("gameID"));
-        String gameName = request.getParameter("gameName");
-        int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
-        String console = request.getParameter("console");
-        
-     %>
-
-
-     
-     
-     
-    <body>
+    
+         <body>
         
         
         <form name="editForm" action="editGame" method="get">
-            <h2>Edit a Game</h2>
-            Game ID:
-            <input type="text" name="gameID" value="<%= gameID %>"/><br>
+            <table class="table2">
+                <th colspan="2">Edit a Game:</th>
+                <tr>
+                    <td>Game ID:</td>
+                    <td><input type="text" name="gameID" value="<%= game.getGameID() %>" readonly/></td>
+                </tr>
+                
+                <tr>
+                    <td>Game Name:</td>
+                    <td><input type="text" name="name" value="<%= game.getGameName() %>"/></td>
+                </tr>
+                
+                <tr>
+                    <td>Release Year:</td>
+                    <td><input type="text" name="year" value="<%= game.getReleaseYear() %>"/></td>
+                </tr>
+                
+                <tr>
+                    <td>Console:</td>
+                    <td><input type="text" name="console" value="<%= game.getConsole() %>"/></td>
+                </tr>
             
-            Game Name:<br>
-            <input type="text" name="name" value="<%= gameName %>"/><br>
+            </table>
+            <br>
+            <input type="submit" name="submit" value="Edit"/>
+            <input type="reset" name ="reset" value="Reset" />
             
-            Release Year:<br>
-            <input type="text" name="year" value="<%= releaseYear %>"/><br>
-            
-            Console:<br>
-            <input type="text" name="console" value="<%= console %>"/><br><br>
-            
-            <input type="submit" name="submit" value="Submit"/>
+           
         </form>
         
             

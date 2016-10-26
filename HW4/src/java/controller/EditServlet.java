@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Games;
 
 /**
  *
@@ -81,12 +82,18 @@ public class EditServlet extends HttpServlet {
             String gameName = request.getParameter("name");
             int releaseYear = Integer.parseInt(request.getParameter("year"));
             String console = request.getParameter("console");
+            
+            Games game = new Games();
+            game.setGameID(gameID);
+            game.setGameName(gameName);
+            game.setReleaseYear(releaseYear);
+            game.setConsole(console);
                         
             //create a deleteQuery object
             EditQuery eq = new EditQuery();
                  
             //use deleteQuery to delete object
-            eq.doEdit(gameID, gameName, releaseYear, console);
+            eq.doEdit(game);
             
             //pass execution back to the ReadServlet
             String url = "/read";

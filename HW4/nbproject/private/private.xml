@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/controller/DeleteServlet.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/controller/EditServlet.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/controller/EditForm.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/dbhelpers/ReadQuery.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/web/edit.jsp</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/web/read.jsp</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/controller/AddForm.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/dbhelpers/EditQuery.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/web/add.jsp</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/dbhelpers/AddQuery.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/web/index.jsp</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/controller/AddServlet.java</file>
-            <file>file:/C:/Users/tholm_000/Desktop/SDD/HW4/HW4/src/java/dbhelpers/DeleteQuery.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
