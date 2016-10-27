@@ -58,7 +58,7 @@ public class SearchQuery {
     public void doSearch(String gameName){
         
        try {
-           String query = "SELECT * from games WHERE UPPER(gameName) LIKE ?";
+           String query = "SELECT * from games WHERE UPPER(gameName) LIKE ? ORDER BY gameID ASC";
            
            PreparedStatement ps = conn.prepareStatement(query);
            ps.setString(1, "%" + gameName.toUpperCase() + "%");

@@ -6,7 +6,7 @@ table.table1{
     border: 8px solid white;
     border-collapse: collapse;
     width: 100%;
-    
+
 }
 
 input[readonly]{
@@ -32,7 +32,7 @@ table.table1 th{
     color: #696969;
     height: 30px;
     font-size: 15pt;
-    
+
 }
 
 table.table1 td{
@@ -45,7 +45,7 @@ table.table2{
     border: 8px solid white;
     border-collapse: collapse;
     width: 100%;
-    
+
 }
 
 table.table2 th, td{
@@ -63,7 +63,7 @@ table.table2 th{
     color: #696969;
     height: 30px;
     font-size: 15pt;
-    
+
 }
 
 table.table2 td{
@@ -77,7 +77,7 @@ a{
 
 
 form{
-    
+
     margin: auto;
     position: relative;
     width: 400px;
@@ -89,6 +89,96 @@ form{
     border: inset 1px solid powderblue;
 }
 h2{
-text-align: center;
+    text-align: center;
 
+}
+
+/*wrapper div that holds everything*/
+.wrap{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-top: 25 px;
+
+}
+
+/*formats header of the page*/
+.header{
+
+    text-align: left;
+    padding: 25px;
+}
+.headerImg{
+    float: left;
+    width: 200px;
+
+}
+
+.headerText{
+    float:left;
+    height: 105px;
+    padding-top: 50px;
+    padding-left: 25px;
+}
+
+/*Fat Erik's Pipelist*/
+/*http://css.maxdesign.com.au/listamatic/horizontal32.htm */
+
+.navcontainer { 
+    margin-left: 30px; 
+    text-align: left;
+}
+
+.navlist
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlist li
+{
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.navlist li:before { content: "| "; }
+.navlist li:first-child:before { content: ""; }
+
+/*IE workaround*/
+/*All IE browsers*/
+* html .navlist li
+{
+    border-left: 1px solid black;
+    padding: 0 0.4em 0 0.4em;
+    margin: 0 0.4em 0 -0.4em;
+}
+
+/*Win IE browsers - hide from Mac IE\*/
+* html .navlist { height: 1%; }
+
+* html .navlist li
+{
+    display: block;
+    float: left;
+}
+
+/*End hide*/
+/*Mac IE 5*/
+* html .navlist li:first-child { border-left: 0; }
+
+/*formats footer*/
+.footer{
+
+    text-align: center;
+    padding: 25px;
+}
+
+/*formats main content*/
+.main{
+
+    text-align: left;
+    padding: 25px;
 }

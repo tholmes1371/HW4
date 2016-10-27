@@ -9,22 +9,37 @@
         <title>Search Games</title>        
     </head>
     <body>
-        
-        
-        <form name="searchForm" action="search" method="get">
-            <table class="table2">
-                <th colspan="2">Search for a game:</th>
-                <tr>
-                    <td>Game Name:</td>
-                    <td><input type="text" name="searchVal" value=""/></td>
-                </tr>
-            </table>
-            
-            <br>
-            
-            <input type="submit" name="submit" value="Search"/>
-          
-              
-         </form>
+        <div class="wrap"> <!-- wrap -->
+
+            <%@include file="includes/header.jsp" %>
+
+            <%@include file="includes/menu.jsp" %>
+
+            <div class="main"> <!-- main -->
+
+
+                <form name="searchForm" action="search" method="get">
+                    <table class="table2">
+                        <th colspan="2">Search for a game:</th>
+                        <tr>
+                            <td>Game Name:</td>
+                            <td><input type="text" name="searchVal" value=""/></td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <input type="submit" name="submit" value="Search"/>
+                    <button onclick="href = 'read'">Go Back</button>
+
+                </form>
+
+            </div> <!-- close main -->
+
+
+            <%@include file="includes/footer.jsp" %>
+
+        </div> <!-- close wrap -->  
+
     </body>
 </html>
